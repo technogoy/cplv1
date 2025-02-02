@@ -6,6 +6,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoresDisplay = document.getElementById('scoresDisplay');
     const scoresList = document.getElementById('scoresList');
 
+    const teams = {
+        "Team A": ["Player A1", "Player A2", "Player A3", "Player A4"],
+        "Team B": ["Player B1", "Player B2", "Player B3", "Player B4"],
+        "Team C": ["Player C1", "Player C2", "Player C3", "Player C4"],
+        "Team D": ["Player D1", "Player D2", "Player D3", "Player D4"]
+    };
+
+    const team1Select = document.getElementById('team1');
+    const team1Player1Select = document.getElementById('team1Player1');
+    const team1Player2Select = document.getElementById('team1Player2');
+    const team2Select = document.getElementById('team2');
+    const team2Player1Select = document.getElementById('team2Player1');
+    const team2Player2Select = document.getElementById('team2Player2');
+
+    function populatePlayers(teamSelect, player1Select, player2Select) {
+        const team = teamSelect.value;
+        const players = teams[team] || [];
+        player1Select.innerHTML = '';
+        player2Select.innerHTML = '';
+        players.forEach(player => {
+            const option1 = document.createElement('option');
+            option1.value = player;
+            option1.textContent = player;
+            player1Select.appendChild(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = player;
+            option2.textContent = player;
+            player2Select.appendChild(option2);
+        });
+    }
+
+    team1Select.addEventListener('change', () => {
+        populatePlayers(team1Select, team1Player1Select, team1Player2Select);
+    });
+
+    team2Select.addEventListener('change', () => {
+        populatePlayers(team2Select, team2Player1Select, team2Player2Select);
+    });
+
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
