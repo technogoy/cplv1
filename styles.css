@@ -1,5 +1,5 @@
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', serif;
     text-align: center;
     margin-top: 50px;
 }
@@ -10,12 +10,12 @@ h1 {
 
 button {
     padding: 10px 20px;
-    background-color: #894caf;
-    color: rgb(228, 116, 116);
+    background-color: #f4e6dd;
+    color: rgb(7, 0, 0);
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #1be625;
+    background-color: #1b62e6;
 }
